@@ -1,0 +1,36 @@
+.cont-input label{
+  display: block;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  padding: 8px 10px;
+  position: relative;
+  box-sizing: border-box;
+}
+.cont-input label.focus{
+  border-left: 1px solid blueviolet;
+  border-right: 1px solid blueviolet;
+}
+.cont-input label span{
+  color: white;
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  transition: .25s;
+  margin-left: 5px;
+}
+.cont-input span.focus{
+  color: blueviolet;
+}
+.cont-input span.top{
+  left: 0;
+  top: -12px;
+  font-size: 12px;
+  padding: 0 5px;
+}
+.cont-input label input{
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
