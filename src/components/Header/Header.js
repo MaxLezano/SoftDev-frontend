@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logoBlack from '../../assets/images/logo-black.png';
-import Button from '../Button/Button';
 import Input from '../Input/Input';
 import './Header.css';
 
@@ -19,13 +18,13 @@ function Header() {
               <Link reloadDocument className='nav-link active' aria-current='page' to='/'>INICIO</Link>
             </li>
             <li className='nav-item text-center mx-3'>
-              <Button classNameButton='nav-link btn border-0' description='CONTACTO'/>
+              <button class='nav-link btn border-0'>CONTACTO</button>
             </li>
             <form className='col-8 col-lg-2 mx-3' role='search'>
               <Input labelText='Buscar' />
             </form>
             <li className='nav-item text-center mx-3'>
-              <Button  classNameButton='nav-link btn border-0' description='INGRESAR'/>
+              <button className='nav-link btn border-0'>INGRESAR</button>
             </li>
           </ul>
         </div>
