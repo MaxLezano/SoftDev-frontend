@@ -1,0 +1,19 @@
+.buy{
+  cursor: pointer;
+  color: gray;
+}
+
+.iconFav {
+   color: gainsboro;
+   border: solid gray 0.1px;
+   border-radius: 0.35rem;
+   cursor: pointer;
+   
+}
+
+.favorito {
+  color: red;
+}
+.card-comprar {
+  margin-top: 1em;
+}
