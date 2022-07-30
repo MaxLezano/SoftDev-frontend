@@ -1,3 +1,7 @@
+.card_container {
+width: 16rem;
+}
+
 .buy{
   cursor: pointer;
   color: gray;
@@ -11,9 +15,9 @@
    
 }
 
-.favorito {
+.favorit {
   color: red;
 }
-.card-comprar {
+.card-buy {
   margin-top: 1em;
 }
