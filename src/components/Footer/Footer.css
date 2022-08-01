@@ -1,0 +1,37 @@
+.container-footer {
+  max-width: 100%;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: rgb(61, 60, 66);
+}
+
+.container-elements {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.size-img {
+  width: 17rem;
+}
+
+.color {
+  color: rgb(166, 209, 230);
+}
+
+.size-elements {
+  margin-top: 1.5rem;
+  margin-left: 1rem;
+}
+
+.data-fiscal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-left: 1rem;
+  color: rgb(166, 209, 230);
+  margin-top: 1rem;
+}
