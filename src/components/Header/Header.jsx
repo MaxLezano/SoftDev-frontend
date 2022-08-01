@@ -38,7 +38,7 @@ function Header() {
                   <button className='nav-link btn border-0 col-12 menu-navbar'>CONTACTO</button>
                 </li>
                 <form className='text-white px-3 mt-2 col-10 col-sm-11 col-md-6 col-lg-4 col-xl-3 col-xxl-2' role='search'>
-                  <Input labelText='Buscar' classNameInput='color-search' typeInput='search' onChangeInput={handleChange} />
+                  <Input labelText='Buscar' typeInput='search' onChangeInput={handleChange} />
                 </form>
                 {
                   isLogin
@@ -63,23 +63,23 @@ function Header() {
                         </button>
                       </li>
                       <li className='nav-item mt-2 d-flex align-items-center btn-group flex-column icon-menu'>
-                        <button className='nav-link btn border-0 menu-navbar' type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button className='nav-link btn border-0 menu-navbar' type='button' data-bs-toggle='dropdown' aria-expanded='false'>
                           <Avatar 
                           alt={name} 
                           src={imgProfile} 
                           sx={{ width: 56, height: 56 }} 
                         />
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-end border-0 list-avatar">
-                          <li><a class="dropdown-item" href="/#">Mi perfil</a></li>
-                          <li><a class="dropdown-item" href="/#">Ayuda</a></li>
-                          <li><a class="dropdown-item" href="/#">Cerrar sesión</a></li>
+                        <ul className='dropdown-menu dropdown-menu-end border-0 list-avatar'>
+                          <li><a className='dropdown-item' href='/#'>Mi perfil</a></li>
+                          <li><a className='dropdown-item' href='/#'>Ayuda</a></li>
+                          <li><a className='dropdown-item' href='/#'>Cerrar sesión</a></li>
                         </ul>
                       </li>
                     </>
                   :
                     <li className='nav-item px-3 mt-2 col-12 col-md-4 col-lg-2 col-xxl-2'>
-                      <button className='nav-link btn border-0 col-12 menu-navbar'>INGRESAR</button>
+                      <button className='nav-link btn border-0 col-12 menu-navbar' data-bs-toggle='modal' data-bs-target='#loginModal'>INGRESAR</button>
                     </li>                    
                 }
               </div>

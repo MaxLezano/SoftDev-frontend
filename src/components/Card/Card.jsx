@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Card.css'
 import img from '../../assets/images/logo-black.png'
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 const Card = () => {
@@ -15,7 +15,7 @@ return (
       <div className="div d-flex justify-content-between">
         <p className="card-title">Nombre del producto</p>
         <div onClick={() =>setIsColor(!isColor)}>
-          <FavoriteIcon className={`iconFav ${isColor && "favorit"}`}/>
+          <FavoriteRoundedIcon className={`border-0 iconFav ${isColor && "favorit"}`}/>
         </div>
         <div>
           <ShoppingCartIcon className= "buy"/>

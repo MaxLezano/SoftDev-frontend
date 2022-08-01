@@ -1,0 +1,22 @@
+.bg-blur-modal{
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+}
+.modal-content{
+  background-color: #3D3C42;
+  width: 80%;
+}
+.form-check-input:checked[type=checkbox]{
+  background-color: #9c27b0;
+}
+.text-below{
+  font-size: 0.8em;
+}
+.btn-color{
+  background-color: #9c27b0;
+  color: #FEFBF6;
+}
+.btn-color:hover{
+  background-color: #54155f;
+  color: #FEFBF6;
+}
