@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logoBlack from '../../assets/images/logo-black.png';
+import logoWhite from '../../assets/images/logo-white.png';
 import BadgeCart from '../BadgeCart/BadgeCart';
 import BadgeFavorite from '../BadgeFavorite/BadgeFavorite';
 import Input from '../Input/Input';
@@ -23,7 +23,7 @@ function Header() {
     <nav className='navbar navbar-expand-lg header'>
       <div className='container-fluid'>
         <Link to={'/'} className='mx-0 col-8 col-md-4 col-lg-3 col-xl-2'>
-          <img className='col-12' src={logoBlack} alt='Logo'/>
+          <img className='col-12' src={logoWhite} alt='Logo'/>
         </Link>
         <button className='navbar-toggler border-0' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
           <span className='navbar-toggler-icon'></span>
