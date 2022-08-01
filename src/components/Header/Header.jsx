@@ -5,9 +5,10 @@ import BadgeCart from '../BadgeCart/BadgeCart';
 import BadgeFavorite from '../BadgeFavorite/BadgeFavorite';
 import Input from '../Input/Input';
 import Avatar from '@mui/material/Avatar';
+import LoginModal from '../LoginModal/LoginModal';
 import './header.css';
 
-import { user } from '../../fakeBack';
+import { user } from '../../fakeBack'; // importando endpoint del falso backend
 
 function Header() {
   const isLogin = false; // comprobar login desde el storage
@@ -80,7 +81,8 @@ function Header() {
                   :
                     <li className='nav-item px-3 mt-2 col-12 col-md-4 col-lg-2 col-xxl-2'>
                       <button className='nav-link btn border-0 col-12 menu-navbar' data-bs-toggle='modal' data-bs-target='#loginModal'>INGRESAR</button>
-                    </li>                    
+                      <LoginModal />
+                    </li>
                 }
               </div>
             </div>
