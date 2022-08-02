@@ -1,3 +1,38 @@
-.bg-header{
-  background-color: cadetblue;
+.header{
+  background-color: #3D3C42;
+}
+.menu-navbar{
+  color: #FEFBF6;
+}
+.menu-navbar:hover{
+  color: #9c27b0;
+}
+.ul-menu{
+  display: flex;
+  justify-content: center;
+}
+.icon-menu{
+  width: 80px;
+  height: 80px;
+}
+.list-avatar{
+  background-color: #3D3C42;
+  min-width: min-content;
+}
+.list-avatar li a{
+  text-align: center;
+  color: #FEFBF6;
+}
+.list-avatar li a:hover{
+  background-color: #9c27b0;
+  color: #FEFBF6;
+}
+@media (min-width: 1024px) {
+  .ul-menu{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .list-avatar li a{
+    text-align: end;
+  }
 }

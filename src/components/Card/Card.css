@@ -1,32 +1,28 @@
 .card_container {
-width: 95%;
-margin: 0.3em;
+  width: 95%;
+  margin: 0.3em;
 }
-
-.buy{
+.buy {
   cursor: pointer;
   color: gray;
 }
-
 .iconFav {
-   color: gainsboro;
-   border: solid gray 0.1px;
-   border-radius: 0.35rem;
-   cursor: pointer;
-   
+  color: gainsboro;
+  border: solid gray 0.1px;
+  border-radius: 0.35rem;
+  cursor: pointer;
+  transition: .25s;
 }
-
 .favorit {
   color: red;
 }
 .card-buy {
   margin-top: 1em;
 }
-
 @media (min-width: 320px) {
   .card_body {
     display: flex;
     justify-content: center;
-    flex-direction:column;
+    flex-direction: column;
   }
 }

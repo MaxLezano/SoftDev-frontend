@@ -20,7 +20,6 @@ const SectionProducts = () => {
       <Card/>
       <Card/>
       <Card/>
-     
     </div>
     
   )
