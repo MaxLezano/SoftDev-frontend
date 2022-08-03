@@ -5,7 +5,7 @@ import FacebookRounded from '@mui/icons-material/FacebookRounded';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import EmailIcon from '@mui/icons-material/Email';
 import { Link } from 'react-router-dom';
-import './footer.css';
+import './Footer.css';
 
 function Footer() {
   return (

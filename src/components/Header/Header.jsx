@@ -11,7 +11,7 @@ import './header.css';
 import { user } from '../../fakeBack'; // importando endpoint del falso backend
 
 function Header() {
-  const isLogin = false; // comprobar login desde el storage
+  const isLogin = true; // comprobar login desde el storage
   const { name, imgProfile, favorite, cart } = user;
 
   const handleChange = (e) => { // setear la búsqueda del producto

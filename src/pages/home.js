@@ -1,8 +1,11 @@
 import React from 'react';
+import SectionProducts from '../components/sectionProducts/SectionProducts';
 
 function home() {
   return (
-    <div>HOLA SOY EL HOMEPAGE</div>
+    <>
+      <SectionProducts/>
+    </>
   );
 }
 
