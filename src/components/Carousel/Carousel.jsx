@@ -20,7 +20,7 @@ function Carousel() {
   },[]);
   
   return (
-    <div id='carouselExampleDark' className='carousel carousel-dark slide' data-bs-ride='carousel'>
+    <div id='carouselExampleDark' className='carousel carousel-dark slide cont-carousel' data-bs-ride='carousel'>
       <div className='carousel-inner'>
         <div className='carousel-item active' data-bs-interval='3000'>
           <div className='container'>

@@ -9,7 +9,7 @@ import './Footer.css';
 
 function Footer() {
   return (
-    <div className='container-fluid footer'>
+    <div className='container-fluid footer' id='contactFooter'>
       <div className='row justify-content-center'>
         <img className='my-3 col-8 col-sm-5 col-lg-3 col-xxl-2' src={logoWhite} alt='Logo' />
         <div className='container d-flex justify-content-center py-3'>

@@ -1,0 +1,14 @@
+.img-flayer{
+  background-image: url('https://i.postimg.cc/6Q5Rm6nj/Flyer-show-promotion-simple-gradiente-con-foto-cantante-Pin-de-Pinterest-1080-1920.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 30vh;
+  display: flex;
+  box-shadow: 0px 0px 15px 5px rgb(0, 0, 0, 0.1);
+}
+@media (max-width: 600px) {
+  .img-flayer{
+    display: none;
+  }
+}
