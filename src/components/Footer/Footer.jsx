@@ -5,13 +5,13 @@ import FacebookRounded from '@mui/icons-material/FacebookRounded';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import EmailIcon from '@mui/icons-material/Email';
 import { Link } from 'react-router-dom';
-import './footer.css';
+import './Footer.css';
 
 function Footer() {
   return (
-    <div className='container-fluid footer'>
+    <div className='container-fluid footer' id='contactFooter'>
       <div className='row justify-content-center'>
-        <img className='my-3 col-3' src={logoWhite} alt='Logo' />
+        <img className='my-3 col-8 col-sm-5 col-lg-3 col-xxl-2' src={logoWhite} alt='Logo' />
         <div className='container d-flex justify-content-center py-3'>
           <Link to='/whatsapp' className='px-2'>
             <WhatsAppIcon fontSize='large' sx={{color: '#FEFBF6'}} />

@@ -5,6 +5,10 @@
 .modal-content{
   background-color: #3D3C42;
   width: 80%;
+  z-index: 4;
+}
+.modal-backdrop{
+  z-index: 0;
 }
 .form-check-input:checked[type=checkbox]{
   background-color: #9c27b0;

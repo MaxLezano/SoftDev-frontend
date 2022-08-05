@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import './input.css';
+import './Input.css';
 
 function Input({ classNameDivInput, nameInput, typeInput, idInput, labelText, onChangeInput }) {
   
