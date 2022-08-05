@@ -11,7 +11,7 @@ function Footer() {
   return (
     <div className='container-fluid footer'>
       <div className='row justify-content-center'>
-        <img className='my-3 col-3' src={logoWhite} alt='Logo' />
+        <img className='my-3 col-8 col-sm-5 col-lg-3 col-xxl-2' src={logoWhite} alt='Logo' />
         <div className='container d-flex justify-content-center py-3'>
           <Link to='/whatsapp' className='px-2'>
             <WhatsAppIcon fontSize='large' sx={{color: '#FEFBF6'}} />

@@ -1,0 +1,17 @@
+.cont-img-fav{
+  height: 40vh;
+  width: 100vw;
+}
+.cont-description{
+  display: flex;
+}
+@media (max-width: 600px) {
+  .cont-description{
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .desc-text-carousel{
+    display: none;
+  }
+}
