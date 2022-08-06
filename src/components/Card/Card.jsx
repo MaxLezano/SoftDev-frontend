@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Card.css'
+import { useNavigate } from 'react-router-dom'
 import img from '../../assets/images/logo-black.png'
 import FavoriteIcon from '@mui/icons-material/FavoriteRounded';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -7,6 +8,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 const Card = () => {
   
   const [ isColor, setIsColor] = useState(false)
+  const navigate = useNavigate()
  
 return (
   <div className="card card_container">
@@ -26,7 +28,7 @@ return (
         
       <div className='text-center'>
         <h6 >30.000</h6>
-        <a href="/" className="btn btn-primary">Comprar</a>
+        <button onClick={ () => navigate('/pageproduct')} className="btn btn-primary">Comprar</button>
       </div>
     </div>
   </div>
