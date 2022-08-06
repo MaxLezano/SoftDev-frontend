@@ -1,5 +1,6 @@
 import React from 'react'
 import img from '../../assets/images/logo-white.png'
+
 import { useLoginContext } from '../../providers/LoginProvider'
 
 import './PageProduct.css'
@@ -20,6 +21,11 @@ const PageProduct = () => {
 //     })
 //         alert("agrwgado al carrito")
 //    }  
+
+import './PageProduct.css'
+
+const PageProduct = () => {
+
   return (
     <div className='container_page_grid shadow'>
      
@@ -54,6 +60,7 @@ const PageProduct = () => {
               <div className='m-2 grid_col_price'>
                   <h3>$30.000</h3>
                   <button className='btn btn-primary my-2 mx-1'>Comprar</button>
+
                   <button className='btn btn-success my-2 mx-1' >Agregar al carrito</button>
                   <h4 className='mx-2'>Stock</h4>
                   {
@@ -68,6 +75,14 @@ const PageProduct = () => {
                     :
                     null
                   }
+
+                  <button className='btn btn-success my-2 mx-1'>Agregar al carrito</button>
+                  <h4 className='mx-2'>Stock</h4>
+                  <h6 className='mx-2'>Datos de envio</h6>
+                  <p className='mx-2'>Direccion</p>
+                  <p className='mx-2'>Codigo postal</p>
+                  <p className='mx-2'>telefono</p>
+
               </div>
          
         </div>
