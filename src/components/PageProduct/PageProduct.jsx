@@ -22,9 +22,7 @@ const PageProduct = () => {
 //         alert("agrwgado al carrito")
 //    }  
 
-import './PageProduct.css'
 
-const PageProduct = () => {
 
   return (
     <div className='container_page_grid shadow'>
@@ -89,4 +87,4 @@ const PageProduct = () => {
   )
 }
 
-export default PageProduct
+export default PageProduct;

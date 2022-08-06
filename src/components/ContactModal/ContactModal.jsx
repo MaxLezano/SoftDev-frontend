@@ -11,8 +11,7 @@ function ContactModal() {
           <form className='d-flex flex-column align-items-center col-10'>
             <Input typeInput='text' classNameDivInput='mb-1 col-12 mt-3' labelText='Nombre y Apellido'/>
             <Input typeInput='mail' classNameDivInput='mb-1 col-12 mt-3' labelText='Correo'/>
-            {/* <Input typeInput='textarea' classNameDivInput='mb-1 col-12 mt-3' labelText='Contraseña'/> */}
-            <textarea name="" id="" placeholder='Descripcion' className='mb-1 col-12 mt-3' cols="30" rows="10"></textarea>
+            <textarea placeholder='Descripcion' className='mb-1 col-12 mt-3' cols="30" rows="10"></textarea>
             <button type='button' className='btn border-0 mt-4 mb-3 col-6 btn-color'>ENVIAR</button>
           </form>
         </div>
