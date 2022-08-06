@@ -6,7 +6,7 @@ import BadgeFavorite from '../BadgeFavorite/BadgeFavorite';
 import Input from '../Input/Input';
 import Avatar from '@mui/material/Avatar';
 import LoginModal from '../LoginModal/LoginModal';
-import './header.css';
+import './Header.css';
 
 import { user } from '../../fakeBack'; // importando endpoint del falso backend
 
