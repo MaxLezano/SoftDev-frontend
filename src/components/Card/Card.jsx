@@ -1,10 +1,19 @@
 
+import React, { useState } from 'react'
+import './Card.css'
+import { useNavigate } from 'react-router-dom'
+import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded';
+import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
+
+
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import './Card.css'
+
 
 const Card = (props) => {
   const { name, price, description, img, stock } = props.prod;
   const [ isFavorite, setIsFavorite] = useState(false);
+  const navigate = useNavigate()
 
   const addFavorite = () => {
     if (isFavorite === true) {
@@ -34,7 +43,7 @@ const Card = (props) => {
           <small className='text-muted fst-italic desc-text'>{description}</small>
           <small className='text-muted'>stock: {stock}</small>
           <div className='mt-2 d-flex justify-content-between align-items-end'>
-            <button className='btn btn-danger'>COMPRAR</button>
+            <button onClick={() => navigate('/pageproduct')} className='btn btn-danger'>COMPRAR</button>
             <ShoppingCartIcon sx={{color: 'gray'}} />
           </div>
         </div>
