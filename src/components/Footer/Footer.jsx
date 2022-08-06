@@ -23,10 +23,10 @@ function Footer() {
           <Link to='/instagram' className='px-2'>
             <InstagramIcon fontSize='large' sx={{color: '#FEFBF6'}} />
           </Link>
-          <Link to='/contactModal' className='px-2'>
+          <span type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal" className='px-2'>
             <EmailIcon fontSize='large' sx={{color: '#FEFBF6'}} />
-            <ContactModal/>
-          </Link>
+          </span>
+          <ContactModal/>
         </div>
         <div className='container text-muted fst-italic d-flex justify-content-center'>
           <div className='dropdown-center'>
