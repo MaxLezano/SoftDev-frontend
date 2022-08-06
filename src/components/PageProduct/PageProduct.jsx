@@ -1,10 +1,29 @@
 import React from 'react'
 import img from '../../assets/images/logo-white.png'
+import { useLoginContext } from '../../providers/LoginProvider'
+import { useNavigate } from 'react-router-dom'
+
 import './PageProduct.css'
 
 const PageProduct = () => {
+  const loginUser = useLoginContext()
+  const navigate = useNavigate()
+// const addCart =  () => {
+//     fetch(`http://localhost:8080/users/carrito/62ee98e98a9e4005dafb72ba`, {
+//       method: "PATCH",
+//       body : JSON.stringify({
+//         "favorite": [],
+//         "cart":[{"favorito": "Favorito Carrito"}],
+        
+//     }),
+//     headers: {
+//       "content-type": "application/json; charset=UTF-8",
+//   },
+//     })
+//         alert("agregado al carrito")
+//    }  
   return (
-    <div className='container_page_grid shadow'>
+    <div className='container_page_grid shadow my-6'>
      
       <div className='m-2 grid_img'>
                 <h1>titulo producto</h1>
@@ -36,13 +55,24 @@ const PageProduct = () => {
               </div>
               <div className='m-2 grid_col_price'>
                   <h3>$30.000</h3>
-                  <button className='btn btn-primary my-2 mx-1'>Comprar</button>
-                  <button className='btn btn-success my-2 mx-1'>Agregar al carrito</button>
+                  <button onClick={ () => navigate('*')} className='btn btn-primary my-2 mx-1'>Comprar</button>
+                  {
+                    loginUser &&
+                    <button className='btn btn-success my-2 mx-1' >Agregar al carrito</button>
+                  }
                   <h4 className='mx-2'>Stock</h4>
-                  <h6 className='mx-2'>Datos de envio</h6>
-                  <p className='mx-2'>Direccion</p>
-                  <p className='mx-2'>Codigo postal</p>
-                  <p className='mx-2'>telefono</p>
+                  {
+                    loginUser ?
+                      <>
+                        <h6 className='mx-2'>Datos de envio</h6>
+                        <p className='mx-2'>Direccion</p>
+                        <p className='mx-2'>Codigo postal</p>
+                        <p className='mx-2'>telefono</p>
+                      </>
+                      
+                    :
+                    null
+                  }
               </div>
          
         </div>

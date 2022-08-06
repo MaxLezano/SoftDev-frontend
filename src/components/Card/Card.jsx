@@ -41,7 +41,7 @@ const Card = (props) => {
           <small className='text-muted fst-italic desc-text'>{description}</small>
           <small className='text-muted'>stock: {stock}</small>
           <div className='mt-2 d-flex justify-content-between align-items-end'>
-            <button onClick={navigate('/pageproduct')} className='btn btn-danger'>COMPRAR</button>
+            <button onClick={() => navigate('/pageproduct')} className='btn btn-danger'>COMPRAR</button>
             <ShoppingCartIcon sx={{color: 'gray'}} />
           </div>
         </div>
