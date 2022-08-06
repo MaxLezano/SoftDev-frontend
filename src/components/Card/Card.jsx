@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-import FavoriteBorderRoundedIcon from '@mui/icons-material/FavoriteBorderRounded';
-import FavoriteRoundedIcon from '@mui/icons-material/FavoriteRounded';
+
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import './Card.css'
 
@@ -41,6 +39,7 @@ const Card = (props) => {
           </div>
         </div>
       </div>
+
     </div>
   );
 }
