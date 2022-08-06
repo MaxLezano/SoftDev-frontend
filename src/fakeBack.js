@@ -1,8 +1,8 @@
 const user = {
   name: 'Julia',
   imgProfile: '',
-  favorite: 27,
+  favorite: 5,
   cart: 6
-}
+};
 
 export { user };

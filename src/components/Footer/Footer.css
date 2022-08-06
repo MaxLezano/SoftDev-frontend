@@ -1,3 +1,5 @@
 .footer{
   background-color: #3D3C42;
+  border-top: 0.5em solid #9c27b0;
+  box-shadow: 0px -5px 15px 5px rgb(0, 0, 0, 0.15);
 }
