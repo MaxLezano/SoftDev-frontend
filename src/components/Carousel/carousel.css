@@ -1,0 +1,22 @@
+.cont-carousel{
+  border-bottom: 0.5em solid #9c27b0;
+  box-shadow: 0px 5px 15px 5px rgb(0, 0, 0, 0.15);
+  padding-top: 8em;
+}
+.cont-img-fav{
+  height: 40vh;
+  width: 100vw;
+}
+.cont-description{
+  display: flex;
+}
+@media (max-width: 600px) {
+  .cont-description{
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .desc-text-carousel{
+    display: none;
+  }
+}

@@ -1,28 +1,30 @@
 .card_container {
-  width: 95%;
-  margin: 0.3em;
+  border: none;
+  box-shadow: 0px -5px 15px 10px rgba(0,0,0,0.1);
 }
-.buy {
-  cursor: pointer;
-  color: gray;
+.card_body{
+  display: inline-block;
+  box-shadow: 0px -15px 20px 0px rgba(0,0,0,0.1);
 }
-.iconFav {
-  color: gainsboro;
-  border: solid gray 0.1px;
-  border-radius: 0.35rem;
-  cursor: pointer;
-  transition: .25s;
+.bg-img{
+  position: relative;
 }
-.favorit {
-  color: red;
+.icon-fav{
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  margin: 0.5em;
+  color: #9c27b0;
+  border: 0;
 }
-.card-buy {
-  margin-top: 1em;
+.name-text{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-@media (min-width: 320px) {
-  .card_body {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
+.desc-text{
+  font-size: 0.7em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
