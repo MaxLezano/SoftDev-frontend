@@ -23,12 +23,13 @@ function Header() {
   const [isSearching, setIsSearching] = useState(false);
   const [scrollLogo, setScrollLogo] = useState(false);
   const navigate = useNavigate();
+  
   const getProducts = async () => {
     try {
       const response = await clientAxios('/products');
       const data = await response.data;
-      setProducts(data);
-      setProductsAux(data);
+      setProducts(data.products);
+      setProductsAux(data.products);
     } catch (error) {
       console.error(error);
     }

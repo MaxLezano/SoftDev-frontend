@@ -9,7 +9,7 @@ function Carousel() {
     try {
       const response = await clientAxios('/products');
       const data = await response.data;
-      setProducts(data);
+      setProducts(data.products);
     } catch (error) {
       console.error(error);
     }
