@@ -47,7 +47,7 @@ const Card = (props) => {
                 isLogin
               ?
                 <div className='mt-2 d-flex justify-content-between align-items-end'>
-                  <button className='btn btn-danger' onClick={() => navigate(`/products/${_id}`)}>COMPRAR</button>
+                  <button className='btn btn-danger' onClick={() => navigate(`/product/${_id}`)}>COMPRAR</button>
                   <ShoppingCartIcon sx={{color: 'gray'}} />
                 </div>
               :

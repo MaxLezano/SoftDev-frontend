@@ -117,7 +117,7 @@ function Header() {
                     ?
                       <div className='mt-1 shadow cont-ul-search'>
                         {productsAux.map(product => (
-                          <li key={product._id} className='product-item-search' onClick={() => navigate(`/products/${product._id}`)}>
+                          <li key={product._id} className='product-item-search' onClick={() => navigate(`/product/${product._id}`)}>
                             <p className='btn border-0 mb-0 py-2'>
                               {product.name}
                             </p>
