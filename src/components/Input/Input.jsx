@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './Input.css';
 
-function Input({ classNameDivInput, nameInput, typeInput, idInput, labelText, onChangeInput }) {
+function Input({ classNameDivInput, nameInput, typeInput, idInput, labelText, onChangeInput, onFocusInput, onBlurInput }) {
   
   useEffect(() => {
     const inputSelector = document.querySelectorAll('#inputSelector');
@@ -27,7 +27,7 @@ function Input({ classNameDivInput, nameInput, typeInput, idInput, labelText, on
     <div className={`cont-input ${classNameDivInput}`}>
       <label>
         <span id='inputSelector'>{labelText}</span>
-        <input type={typeInput} name={nameInput} id={idInput} onChange={onChangeInput} />
+        <input type={typeInput} name={nameInput} id={idInput} onChange={onChangeInput} onFocus={onFocusInput} onBlur={onBlurInput} />
       </label>
     </div>
   );

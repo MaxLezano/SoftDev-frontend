@@ -6,6 +6,7 @@
   background-color: #3D3C42;
   width: 80%;
   z-index: 4;
+  position: relative;
 }
 .modal-backdrop{
   z-index: 0;

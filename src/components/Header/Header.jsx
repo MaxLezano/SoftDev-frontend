@@ -1,31 +1,66 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logoWhite from '../../assets/images/logo-white.png';
+import logoTextWhite from '../../assets/images/logo-text-white.png';
 import BadgeCart from '../BadgeCart/BadgeCart';
 import BadgeFavorite from '../BadgeFavorite/BadgeFavorite';
 import Input from '../Input/Input';
 import Avatar from '@mui/material/Avatar';
 import LoginModal from '../LoginModal/LoginModal';
+import clientAxios from '../../config/clientAxios';
 import './header.css';
 
-import { user } from '../../fakeBack'; // importando endpoint del falso backend
+import { user } from '../../fakeBack';
 
 function Header() {
-  const isLogin = false; // comprobar login desde el storage
+  const isLogin = true;
+  const isAdmin = true;
   const { name, imgProfile, favorite, cart } = user;
   const [ headerClass , setHeaderClass ] = useState('navbar navbar-expand-lg header');
+  const [products, setProducts] = useState([]);
+  const [productsAux, setProductsAux] = useState([]);
+  const [searchProduct, setSearchProduct] = useState('');
+  const [isSearching, setIsSearching] = useState(false);
+  const [scrollLogo, setScrollLogo] = useState(false);
+  const navigate = useNavigate();
+  const getProducts = async () => {
+    try {
+      const response = await clientAxios('/products');
+      const data = await response.data;
+      setProducts(data);
+      setProductsAux(data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  
+  useEffect(() => {
+    getProducts();
+  },[]);
 
-  const handleChange = (e) => { // setear la búsqueda del producto
-    e.preventDefault();
-    console.log(e.target.value);
+  const handleChange = (event) => {
+    setSearchProduct(event.target.value);
+    if (searchProduct.length > 1) {
+      setIsSearching(true);
+      const filterProducts = products.filter((product) => {
+        if (product.name.toLowerCase().indexOf(searchProduct.toLowerCase()) !== -1) {
+          return product;
+        }
+      });
+      setProductsAux(filterProducts);
+    } else {
+      setProductsAux(products);
+    }
   }
   
   useEffect(() => {
     const handleScroll = () => { 
-      if (window.pageYOffset > 1) {
+      if (window.pageYOffset > 0) {
         setHeaderClass('navbar navbar-expand-lg header-scrolled');
+        setScrollLogo(true);
       } else {
         setHeaderClass('navbar navbar-expand-lg header');
+        setScrollLogo(false);
       }
     }
     window.addEventListener('scroll', handleScroll);
@@ -38,7 +73,13 @@ function Header() {
     <nav className={headerClass}>
       <div className='container-fluid'>
         <Link reloadDocument to='/' className='mx-0 col-8 col-md-4 col-lg-3 col-xl-2'>
-          <img className='py-2 col-12' src={logoWhite} alt='Logo'/>
+          {
+            scrollLogo
+          ?
+            <img className='py-2 ps-3 col-8' src={logoTextWhite} alt='Logo'/>
+          :
+            <img className='py-2 ps-3 col-12' src={logoWhite} alt='Logo'/>
+          }
         </Link>
         <button className='navbar-toggler border-0' type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
           <span className='navbar-toggler-icon'></span>
@@ -60,7 +101,31 @@ function Header() {
                   <a className='nav-link btn border-0 col-12 menu-navbar' href='#contactFooter'>CONTACTO</a>
                 </li>
                 <form className='text-white px-3 mt-2 col-10 col-sm-11 col-md-6 col-lg-4 col-xl-3 col-xxl-2' role='search'>
-                  <Input labelText='Buscar' typeInput='search' onChangeInput={handleChange} />
+                  <Input 
+                    labelText='Buscar' 
+                    typeInput='search'
+                    onChangeInput={handleChange}
+                    onBlurInput={() => {
+                      setTimeout(() => {
+                        setIsSearching(false)
+                      }, 100);
+                    }}
+                  />
+                    {
+                      isSearching
+                    ?
+                      <div className='mt-1 shadow cont-ul-search'>
+                        {productsAux.map(product => (
+                          <li key={product._id} className='product-item-search' onClick={() => navigate(`/products/${product._id}`)}>
+                            <p className='btn border-0 mb-0 py-2'>
+                              {product.name}
+                            </p>
+                          </li>
+                        ))}
+                      </div>
+                    :
+                      null
+                    }
                 </form>
                 {
                   isLogin
@@ -87,12 +152,19 @@ function Header() {
                       <li className='nav-item mt-2 d-flex align-items-center btn-group flex-column icon-menu'>
                         <button className='nav-link btn border-0 menu-navbar' type='button' data-bs-toggle='dropdown' aria-expanded='false'>
                           <Avatar 
-                          alt={name} 
                           src={imgProfile} 
+                          alt={name} 
                           sx={{ width: 56, height: 56 }} 
                         />
                         </button>
                         <ul className='dropdown-menu dropdown-menu-end border-0 list-avatar'>
+                          {
+                            isAdmin
+                          ?
+                            <li><a className='dropdown-item btn rounded-0 item-admin' href='/#'>Administrador</a></li>
+                          :
+                            null
+                          }
                           <li><a className='dropdown-item' href='/#'>Mi perfil</a></li>
                           <li><a className='dropdown-item' href='/#'>Ayuda</a></li>
                           <li><a className='dropdown-item' href='/#'>Cerrar sesión</a></li>

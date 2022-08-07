@@ -4,11 +4,10 @@
   z-index: 2;
 }
 .header-scrolled{
-  background-color: #3d3c42de;
+  background-color: #3D3C42;
   position: fixed;
   z-index: 2;
   box-shadow: 0px 10px 20px 5px rgb(0, 0, 0, 0.4);
-  backdrop-filter: blur(10px);
 }
 .menu-navbar{
   color: #FEFBF6;
@@ -35,6 +34,23 @@
 .list-avatar li a:hover{
   background-color: #9c27b0;
   color: #FEFBF6;
+}
+.cont-ul-search{
+  position: absolute;
+  background-color: #FEFBF6;
+  z-index: 5;
+}
+.product-item-search{
+  color: rgb(100, 100, 100);
+  position: relative;
+}
+.product-item-search:hover{
+  background-color: #9c27b0;
+  color: #FEFBF6;
+}
+.item-admin{
+  border-top: 2px solid #9c27b0;
+  background-color: gray;
 }
 @media (min-width: 1024px) {
   .ul-menu{
