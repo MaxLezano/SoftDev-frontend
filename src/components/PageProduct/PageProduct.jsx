@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import './PageProduct.css'
@@ -6,8 +7,7 @@ import clientAxios from '../../config/clientAxios'
 const PageProduct = () => {
   const { id } = useParams()
   const [product, setProduct] = useState([])
-
-   const getData = () => {
+const getData = () => {
     clientAxios.get(`/products/${id}`)
     .then(res => setProduct(res.data))
    }
@@ -61,4 +61,4 @@ const PageProduct = () => {
   )
 }
 
-export default PageProduct
+export default PageProduct;
