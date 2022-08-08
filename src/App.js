@@ -16,7 +16,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />}/>
-        <Route path='/pageproduct' element={ <PageProducts/> }/>
+        <Route path='/pageproduct/:id' element={ <PageProducts/> }/>
 
         <Route path='*' element={ <Error404/>}/>
 
