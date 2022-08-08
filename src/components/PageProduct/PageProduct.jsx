@@ -1,34 +1,25 @@
-import React from 'react'
-import img from '../../assets/images/logo-white.png'
 
-import { useLoginContext } from '../../providers/LoginProvider'
-
+import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import './PageProduct.css'
+import clientAxios from '../../config/clientAxios'
 
 const PageProduct = () => {
-  const loginUser = useLoginContext()
-// const addCart =  () => {
-//     fetch(`http://localhost:8080/users/carrito/62ee98e98a9e4005dafb72ba`, {
-//       method: "PATCH",
-//       body : JSON.stringify({
-//         "favorite": [],
-//         "cart":[{"favorito": "Favorito Carrito"}],
-        
-//     }),
-//     headers: {
-//       "content-type": "application/json; charset=UTF-8",
-//   },
-//     })
-//         alert("agrwgado al carrito")
-//    }  
-
-
-
+  const { id } = useParams()
+  const [product, setProduct] = useState([])
+const getData = () => {
+    clientAxios.get(`/products/${id}`)
+    .then(res => setProduct(res.data))
+   }
+   const { name, price, description, img, stock } = product
+    useEffect(() => {
+      getData()
+    },[])
   return (
     <div className='container_page_grid shadow'>
      
       <div className='m-2 grid_img'>
-                <h1>titulo producto</h1>
+                <h1>{name}</h1>
                 <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
                   <div className="carousel-inner">
                     <div className="carousel-item active">
@@ -52,35 +43,18 @@ const PageProduct = () => {
                 </div>
               </div>
               <div className='m-2 grid_col_des'>
-                <h2>Descipcion</h2>
-                <p className='p_des'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit non dicta neque numquam aperiam quos. Error dolor voluptatem beatae quam accusantium possimus vitae et ad qui animi quasi quis deserunt totam maxime eaque, consectetur eveniet, id libero pariatur culpa! Reiciendis voluptates quasi consequuntur ducimus cum repellendus obcaecati, facilis dolore sit.</p>
+                <h2>Descripcion</h2>
+                <p className='p_des'>{description}</p>
               </div>
               <div className='m-2 grid_col_price'>
-                  <h3>$30.000</h3>
+                  <h3>$ {price}</h3>
                   <button className='btn btn-primary my-2 mx-1'>Comprar</button>
-
                   <button className='btn btn-success my-2 mx-1' >Agregar al carrito</button>
-                  <h4 className='mx-2'>Stock</h4>
-                  {
-                    loginUser ?
-                    
-                      <>
-                        <h6 className='mx-2'>Datos de envio</h6>
-                        <p className='mx-2'>Direccion</p>
-                        <p className='mx-2'>Codigo postal</p>
-                        <p className='mx-2'>telefono</p>
-                      </>
-                    :
-                    null
-                  }
-
-                  <button className='btn btn-success my-2 mx-1'>Agregar al carrito</button>
-                  <h4 className='mx-2'>Stock</h4>
+                  <h4 className='mx-2'>Stock: {stock}</h4>
                   <h6 className='mx-2'>Datos de envio</h6>
                   <p className='mx-2'>Direccion</p>
                   <p className='mx-2'>Codigo postal</p>
                   <p className='mx-2'>telefono</p>
-
               </div>
          
         </div>

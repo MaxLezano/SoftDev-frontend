@@ -1,11 +1,13 @@
 .header{
   background-color: #3D3C42;
   position: fixed;
+  top: 0;
   z-index: 2;
 }
 .header-scrolled{
   background-color: #3d3c42de;
   position: fixed;
+  top: 0;
   z-index: 2;
   box-shadow: 0px 10px 20px 5px rgb(0, 0, 0, 0.4);
   backdrop-filter: blur(10px);
