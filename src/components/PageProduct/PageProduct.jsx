@@ -61,4 +61,4 @@ const PageProduct = () => {
   )
 }
 
-export default PageProduct
+export default PageProduct;

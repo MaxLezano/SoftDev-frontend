@@ -4,6 +4,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import FacebookRounded from '@mui/icons-material/FacebookRounded';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import EmailIcon from '@mui/icons-material/Email';
+import ContactModal from '../ContactModal/ContactModal';
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
@@ -22,9 +23,10 @@ function Footer() {
           <Link to='/instagram' className='px-2'>
             <InstagramIcon fontSize='large' sx={{color: '#FEFBF6'}} />
           </Link>
-          <Link to='/email' className='px-2'>
+          <span type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal" className='px-2'>
             <EmailIcon fontSize='large' sx={{color: '#FEFBF6'}} />
-          </Link>
+          </span>
+          <ContactModal/>
         </div>
         <div className='container text-muted fst-italic d-flex justify-content-center'>
           <div className='dropdown-center'>
