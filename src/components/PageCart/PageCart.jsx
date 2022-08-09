@@ -15,7 +15,7 @@ const PageCart = () => {
               <h2>Nombre del producto</h2>
               <h6><span>-</span> 1 <span>+</span></h6>
               <span>10 disponibles</span><br/>
-              <button type="button" class="btn btn-outline-danger">Eliminar</button>
+              <button type="button" className="btn btn-outline-danger">Eliminar</button>
             </div>
               <div>
                 <h5>Precio $ 25.000</h5>
@@ -24,7 +24,7 @@ const PageCart = () => {
           <div className='card-buy-container'>
              <div className='card-buy'>
               <h1>Total $ 50.000</h1>
-              <button type="button" class="btn btn-success">Comprar</button>
+              <button type="button" className="btn btn-success">Comprar</button>
              </div>
           </div>
      </div>
