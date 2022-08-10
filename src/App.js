@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Error404 from './pages/Error404';
 import Home from './pages/home';
 import PageCartRoute from './pages/PageCart';
+import PageFav from './pages/PageFav';
 import PageProducts from './pages/PageProducts';
 import { LoginProvider } from './providers/LoginProvider';
 
@@ -18,6 +19,7 @@ function App() {
         <Route path='/' element={<Home />}/>
         <Route path='/pageproduct/:id' element={ <PageProducts/> }/>
         <Route path='/pagecart' element= {<PageCartRoute/>}/>
+        <Route path='/pagefav' element={<PageFav/>}/>
         <Route path='*' element={ <Error404/>}/>
       </Routes>
       <Footer />

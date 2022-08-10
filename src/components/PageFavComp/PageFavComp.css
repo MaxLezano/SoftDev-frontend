@@ -1,0 +1,66 @@
+
+.fav_container {
+  min-height: 100vh;
+  margin: 10em 0 3em 0;
+}
+
+.h5 {
+  margin: 1em;
+  letter-spacing: 0.5em;
+}
+.img_fav {
+  height: 200px;
+  width: 200px;
+}
+
+.fav_card {
+  width: 95%;
+  margin: 0.5em 1em 1em 1em;
+  display: flex;
+  border-bottom: 1px solid black;
+}
+  
+.fav_content {
+  padding: 0 2em 2em 0;
+  margin-left: 1em;
+}
+  
+.fav_content > *{
+  margin-bottom: 0.9em;
+}
+
+@media (max-width:770px) {
+  .fav_card {
+    width: 92%;
+    margin: 0.5em 0em 1em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+  }
+    
+  .fav_content > h5 {
+   text-align: center;
+  }
+   .fav_content > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+   }
+   .fav_content > *{
+    margin-bottom: 0.6em;
+  }
+
+  .fav_content {
+    padding: 0 2em 1em 0;
+    margin-left: 1em;
+  }
+    
+}
+
+
+
+
+
