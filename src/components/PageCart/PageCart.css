@@ -35,6 +35,10 @@ font-size: 2em;
  
  .card-content > h6 > span {
   cursor: pointer;
+  user-select: none;
+ }
+ .card-content > h6{
+  user-select: none;
  }
 @media (max-width: 900px) {
   .cart_grid {
