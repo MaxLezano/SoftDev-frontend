@@ -9,20 +9,22 @@ import Avatar from '@mui/material/Avatar';
 import LoginModal from '../LoginModal/LoginModal';
 import clientAxios from '../../config/clientAxios';
 import './header.css';
-
-import { user } from '../../fakeBack';
+import ProfileModal from '../ProfileModal/ProfileModal';
 
 function Header() {
-  const isLogin = true;
-  const isAdmin = true;
-  const { name, imgProfile, favorite, cart } = user;
-  const [ headerClass , setHeaderClass ] = useState('navbar navbar-expand-lg header');
+  const [isLogin, setIsLogin] = useState(false);
+  const [user, setUser] = useState({});
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [headerClass , setHeaderClass] = useState('navbar navbar-expand-lg header');
   const [products, setProducts] = useState([]);
   const [productsAux, setProductsAux] = useState([]);
   const [searchProduct, setSearchProduct] = useState('');
   const [isSearching, setIsSearching] = useState(false);
   const [scrollLogo, setScrollLogo] = useState(false);
   const navigate = useNavigate();
+  
+  const userId = localStorage.getItem('user-id');
+  const accessToken = localStorage.getItem('access-token');
   
   const getProducts = async () => {
     try {
@@ -35,10 +37,24 @@ function Header() {
     }
   }
   
-  useEffect(() => {
-    getProducts();
-  },[]);
-
+  const getUser = async () => {
+    try {
+      const response = await clientAxios(`/users/${userId}`, {
+        headers: {
+          'access-token': accessToken
+        }
+      });
+      const data = await response.data;
+      setUser(data);
+      setIsLogin(true);
+      if (data.admin === true) {
+        setIsAdmin(true);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  
   const handleChange = (event) => {
     setSearchProduct(event.target.value);
     if (searchProduct.length > 1) {
@@ -55,6 +71,10 @@ function Header() {
   }
   
   useEffect(() => {
+    getProducts();
+    if (userId !== null) {
+      getUser();
+    }
     const handleScroll = () => { 
       if (window.pageYOffset > 0) {
         setHeaderClass('navbar navbar-expand-lg header-scrolled');
@@ -71,7 +91,7 @@ function Header() {
   }, []);
 
   return (
-    <nav className={headerClass}>
+    <nav className={`container-fluid ${headerClass}`}>
       <div className='container-fluid'>
         <Link reloadDocument to='/' className='mx-0 col-8 col-md-4 col-lg-3 col-xl-2'>
           {
@@ -133,19 +153,19 @@ function Header() {
                   ?
                     <>
                       <li className='nav-item mt-2 d-flex justify-content-center align-items-center icon-menu'>
-                        <button className='nav-link btn border-0 menu-navbar'>
+                        <button className='nav-link btn border-0 menu-navbar' onClick={() => navigate('/favorites')}>
                           <BadgeFavorite 
                           styleIcon={{ color: '#FEFBF6', fontSize: 30 }} 
-                          badgeCount={favorite} 
+                          badgeCount={user.favorites.length} 
                           colorCircle='secondary'
                         />
                         </button>
                       </li>
                       <li className='nav-item mt-2 d-flex justify-content-center align-items-center icon-menu'>
-                        <button className='nav-link btn border-0 menu-navbar'>
+                        <button className='nav-link btn border-0 menu-navbar' onClick={() => navigate('/cart')}>
                           <BadgeCart 
                           styleIcon={{ color: '#FEFBF6', fontSize: 30 }} 
-                          badgeCount={cart} 
+                          badgeCount={user.cart.length} 
                           colorCircle='secondary'
                         />
                         </button>
@@ -153,10 +173,10 @@ function Header() {
                       <li className='nav-item mt-2 d-flex align-items-center btn-group flex-column icon-menu'>
                         <button className='nav-link btn border-0 menu-navbar' type='button' data-bs-toggle='dropdown' aria-expanded='false'>
                           <Avatar 
-                          src={imgProfile} 
-                          alt={name} 
-                          sx={{ width: 56, height: 56 }} 
-                        />
+                            src={user.imgProfile} 
+                            alt={user.name} 
+                            sx={{ width: 56, height: 56 }} 
+                          />
                         </button>
                         <ul className='dropdown-menu dropdown-menu-end border-0 list-avatar'>
                           {
@@ -166,9 +186,20 @@ function Header() {
                           :
                             null
                           }
-                          <li><a className='dropdown-item' href='/#'>Mi perfil</a></li>
-                          <li><a className='dropdown-item' href='/#'>Ayuda</a></li>
-                          <li><a className='dropdown-item' href='/#'>Cerrar sesión</a></li>
+                          <li>
+                            <button className='dropdown-item item-avatar' data-bs-toggle='modal' data-bs-target='#profileModal'>
+                              Mi perfil
+                            </button>
+                          </li>
+                          <li><Link className='dropdown-item item-avatar' to='/error404'>Ayuda</Link></li>
+                          <li>
+                            <button 
+                            className='dropdown-item item-avatar' 
+                            onClick={() => {localStorage.clear(); window.location.reload(true);}}
+                            >
+                              Cerrar sesión
+                            </button>
+                          </li>
                         </ul>
                       </li>
                     </>
@@ -183,6 +214,7 @@ function Header() {
           </ul>
         </div>
       </div>
+      <ProfileModal user={user} />
     </nav>
   );
 }

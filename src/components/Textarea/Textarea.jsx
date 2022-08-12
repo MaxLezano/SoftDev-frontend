@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import './Input.css';
+import './Textarea.css';
 
-function Input({ classNameDivInput, nameInput, typeInput, idInput, labelText, onChangeInput, onFocusInput, onBlurInput, pattern, title, value }) {
-  
+function Textarea({ classNameDivInput, classNameSpan, descriptionTextarea, classNameTextarea, nameTextarea, idTextarea, colsText, rowsText }) {
+
   useEffect(() => {
-    const inputSelector = document.querySelectorAll('#inputSelector');
+    const textareaSelector = document.querySelectorAll('#textareaSelector');
     
-    inputSelector.forEach(element => {
+    textareaSelector.forEach(element => {
       element.nextElementSibling.onfocus = () => {
         element.className = 'top focus';
         element.parentNode.className = 'focus';
@@ -21,16 +21,16 @@ function Input({ classNameDivInput, nameInput, typeInput, idInput, labelText, on
         element.parentNode.className = '';
       }
     });
-  }, []);
+  }, [classNameSpan]);
 
   return (
-    <div className={`cont-input ${classNameDivInput}`}>
+    <div className={`cont-text-area ${classNameDivInput}`}>
       <label>
-        <span id='inputSelector'>{labelText}</span>
-        <input type={typeInput} name={nameInput} id={idInput} value={value} onChange={onChangeInput} onFocus={onFocusInput} onBlur={onBlurInput} pattern={pattern} title={title} required />
+        <span id='textareaSelector'>{descriptionTextarea}</span>
+        <textarea className={classNameTextarea} name={nameTextarea} id={idTextarea} cols={colsText} rows={rowsText}/>
       </label>
     </div>
   );
 }
 
-export default Input;
+export default Textarea;

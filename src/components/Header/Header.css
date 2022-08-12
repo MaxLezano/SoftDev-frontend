@@ -27,11 +27,11 @@
   background-color: #3D3C42;
   min-width: min-content;
 }
-.list-avatar li a{
-  text-align: center;
+.item-avatar{
+  text-align: end;
   color: #FEFBF6;
 }
-.list-avatar li a:hover{
+.item-avatar:hover{
   background-color: #9c27b0;
   color: #FEFBF6;
 }
