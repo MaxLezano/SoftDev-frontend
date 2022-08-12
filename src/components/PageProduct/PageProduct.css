@@ -4,7 +4,9 @@
   margin: 2em auto;
   grid-template-columns: 35% 30% auto;
   gap: 1em;
+ 
 }
+
 
 
 h2 > p {
@@ -47,6 +49,7 @@ h2 > p {
     margin-top: 200px;
     grid-template-columns: 35% 30% auto;
     grid-template-rows: 55vh;
+    min-height: 65vh;
   }
   .grid_img {
     grid-column: 1 / 1;
