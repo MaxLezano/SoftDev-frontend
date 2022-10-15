@@ -13,7 +13,7 @@ function Footer() {
     <div className='container-fluid footer' id='contactFooter'>
       <div className='row justify-content-center'>
         <img className='my-3 col-8 col-sm-5 col-lg-3 col-xxl-2' src={logoWhite} alt='Logo' />
-        <div className='container d-flex justify-content-center py-3'>
+        <div className='container d-flex justify-content-center align-items-center py-3'>
           <Link to='/whatsapp' className='px-2'>
             <WhatsAppIcon fontSize='large' sx={{color: '#FEFBF6'}} />
           </Link>
@@ -23,9 +23,9 @@ function Footer() {
           <Link to='/instagram' className='px-2'>
             <InstagramIcon fontSize='large' sx={{color: '#FEFBF6'}} />
           </Link>
-          <span type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal" className='px-2'>
+          <button className="btn border-0 px-2" data-bs-toggle="modal" data-bs-target="#contactModal">
             <EmailIcon fontSize='large' sx={{color: '#FEFBF6'}} />
-          </span>
+          </button>
           <ContactModal/>
         </div>
         <div className='container text-muted fst-italic d-flex justify-content-center'>
